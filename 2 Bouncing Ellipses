@@ -1,0 +1,46 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+var ballY = 0; // starts at top
+var ballSpeed = 10; // changed to move faster
+var ballShape = 40;
+
+var ballY2 = 400; //starts at bottom
+var ballSpeed2 = 5;
+var ballShape2 = 10;
+
+function draw() {
+  background(255, 255, 204); // changed background color
+
+  fill(102, 255, 255); // changed fill
+  ellipse(100, ballY, 30, ballShape);
+  
+  fill(255, 153, 153); // changed fill
+  ellipse(300, ballY2, 30, ballShape2);
+
+  ballY = ballY + ballSpeed;
+  ballY2 = ballY2 + ballSpeed2;
+  ballShape = (ballY/5)+30;
+  ballShape2 = (ballY2/10)+30;
+
+  if (ballY >= 400) {
+    ballSpeed = -10;
+        print(ballY); // indicates ball position for reference
+  }
+  
+  if (ballY2 >= 400) {
+    ballSpeed2 = -5;
+        print(ballY2); // indicates ball position for reference
+}
+  
+  if (ballY <= 0) {
+    ballSpeed = 10;
+  }
+
+  if (ballY2 <= 0) {
+    ballSpeed2 = 5;
+
+  }
+
+}
